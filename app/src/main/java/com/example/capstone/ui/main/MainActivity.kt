@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        if (auth.currentUser == null) {
+            Intent(this, WelcomeActivity::class.java).also {
+                startActivity(it)
+                finish()
+            }
+        }
+
         // Inisialisasi fragment
         homeFragment = HomeFragment()
         guideFragment = GuideFragment()

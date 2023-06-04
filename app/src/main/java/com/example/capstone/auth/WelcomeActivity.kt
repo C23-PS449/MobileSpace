@@ -10,10 +10,15 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.capstone.databinding.ActivityWelcomeBinding
+import com.example.capstone.ui.main.MainActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class WelcomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWelcomeBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,13 @@ class WelcomeActivity : AppCompatActivity() {
         setupView()
         playAnimation()
 
+        auth = Firebase.auth
+
+        if (auth.currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun playAnimation() {
