@@ -21,6 +21,7 @@
 
     <TextView
         android:id="@+id/title"
+        android:alpha="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -37,6 +38,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
+        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -60,6 +62,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
+        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -85,6 +88,7 @@
 
     <Button
         android:id="@+id/btnSignIn"
+        android:alpha="0"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginStart="110dp"
@@ -140,6 +144,7 @@
 
     <TextView
         android:id="@+id/tvForgotPassword"
+        android:alpha="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -151,6 +156,7 @@
 
     <TextView
         android:id="@+id/tvCreateAccount"
+        android:alpha="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_account"

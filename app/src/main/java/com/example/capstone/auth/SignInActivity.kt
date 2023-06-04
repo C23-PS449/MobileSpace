@@ -1,11 +1,16 @@
 package com.example.capstone.auth
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.Toast
 import com.example.capstone.databinding.ActivitySignInBinding
 import com.example.capstone.ui.main.MainActivity
@@ -24,11 +29,12 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //use to remove / hide action bar
         supportActionBar?.hide()
 
         auth = Firebase.auth
+
+        setupAction()
+        playAnimation()
 
         binding.btnSignIn.setOnClickListener {
             val email = binding.etEmail.text.toString()
@@ -80,27 +86,56 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkAllField() : Boolean {
+    private fun setupAction() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+    }
+
+    private fun playAnimation() {
+        val title = ObjectAnimator.ofFloat(binding.title, View.ALPHA, 1f).setDuration(500)
+        val inputEmail = ObjectAnimator.ofFloat(binding.textInputLayoutEmail, View.ALPHA, 1f).setDuration(500)
+        val inputPassword = ObjectAnimator.ofFloat(binding.textInputLayoutPassword, View.ALPHA, 1f).setDuration(500)
+        val forgotPass = ObjectAnimator.ofFloat(binding.tvForgotPassword, View.ALPHA, 1f).setDuration(500)
+        val createAccount = ObjectAnimator.ofFloat(binding.tvCreateAccount, View.ALPHA, 1f).setDuration(500)
+        val btnSignIn = ObjectAnimator.ofFloat(binding.btnSignIn, View.ALPHA, 1f).setDuration(500)
+
+        AnimatorSet().apply {
+            playSequentially(title, inputEmail, inputPassword, forgotPass, btnSignIn, createAccount)
+            start()
+        }
+
+    }
+
+    private fun checkAllField(): Boolean {
         val email = binding.etEmail.text.toString()
-        if (binding.etEmail.text.toString() == "") {
-            binding.textInputLayoutEmail.error = "This is required field"
-            return false
+        return when {
+            binding.etEmail.text.toString().isEmpty() -> {
+                binding.textInputLayoutEmail.error = "This is a required field"
+                false
+            }
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                binding.textInputLayoutEmail.error = "Check email format"
+                false
+            }
+            binding.etPassword.text.toString().isEmpty() -> {
+                binding.textInputLayoutPassword.error = "This is a required field"
+                binding.textInputLayoutPassword.errorIconDrawable = null
+                false
+            }
+            binding.etPassword.length() <= 6 -> {
+                binding.textInputLayoutPassword.error = "Password should be at least 8 characters long"
+                binding.textInputLayoutPassword.errorIconDrawable = null
+                false
+            }
+            else -> true
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.textInputLayoutEmail.error = "Check email format"
-            return false
-        }
-        if (binding.etPassword.text.toString() == "") {
-            binding.textInputLayoutPassword.error = "This is required field"
-            binding.textInputLayoutPassword.errorIconDrawable = null
-            return false
-        }
-        if (binding.etPassword.length() <= 6) {
-            binding.textInputLayoutPassword.error = "Password should at least 8 characters long"
-            binding.textInputLayoutPassword.errorIconDrawable = null
-            return false
-        }
-        return true
     }
 
     private fun showLoading(loading: Boolean){

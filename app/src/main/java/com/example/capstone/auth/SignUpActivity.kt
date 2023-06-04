@@ -1,5 +1,7 @@
 package com.example.capstone.auth
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,8 +23,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         auth = Firebase.auth
+
+        playAnimation()
 
         binding.btnSignUp.setOnClickListener {
             val email = binding.etEmail.text.toString()
@@ -46,36 +50,53 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+
     private fun checkAllField(): Boolean {
         val email = binding.etEmail.text.toString()
-        if (binding.etEmail.text.toString() == "") {
-            binding.textInputLayoutEmail.error = "This is required field"
-            return false
+        return when {
+            binding.etEmail.text.toString() == "" -> {
+                binding.textInputLayoutEmail.error = "This is required field"
+                false
+            }
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                binding.textInputLayoutEmail.error = "Check email format"
+                false
+            }
+            binding.etPassword.text.toString() == "" -> {
+                binding.textInputLayoutPassword.error = "This is required field"
+                binding.textInputLayoutPassword.errorIconDrawable = null
+                false
+            }
+            binding.etPassword.length() <= 6 -> {
+                binding.textInputLayoutPassword.error = "Password should be at least 8 characters long"
+                binding.textInputLayoutPassword.errorIconDrawable = null
+                false
+            }
+            binding.etRePassword.text.toString() == "" -> {
+                binding.textInputLayoutRePassword.error = "This is required field"
+                binding.textInputLayoutRePassword.errorIconDrawable = null
+                false
+            }
+            binding.etPassword.text.toString() != binding.etRePassword.text.toString() -> {
+                binding.textInputLayoutPassword.error = "Password do not match"
+                false
+            }
+            else -> true
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.textInputLayoutEmail.error = "Check email format"
-            return false
+    }
+
+    private fun playAnimation() {
+        val title = ObjectAnimator.ofFloat(binding.title, View.ALPHA, 1f).setDuration(500)
+        val inputEmail = ObjectAnimator.ofFloat(binding.textInputLayoutEmail, View.ALPHA, 1f).setDuration(500)
+        val inputPassword = ObjectAnimator.ofFloat(binding.textInputLayoutPassword, View.ALPHA, 1f).setDuration(500)
+        val rePassword = ObjectAnimator.ofFloat(binding.textInputLayoutRePassword, View.ALPHA, 1f).setDuration(500)
+        val buttonSignUp = ObjectAnimator.ofFloat(binding.btnSignUp, View.ALPHA, 1f).setDuration(500)
+
+        AnimatorSet().apply {
+            playSequentially(title, inputEmail, inputPassword, rePassword, buttonSignUp)
+            start()
         }
-        if (binding.etPassword.text.toString() == "") {
-            binding.textInputLayoutPassword.error = "This is required field"
-            binding.textInputLayoutPassword.errorIconDrawable = null
-            return false
-        }
-        if (binding.etPassword.length() <= 6) {
-            binding.textInputLayoutPassword.error = "Password should at least 8 characters long"
-            binding.textInputLayoutPassword.errorIconDrawable = null
-            return false
-        }
-        if (binding.etRePassword.text.toString() == "") {
-            binding.textInputLayoutRePassword.error = "This is required field"
-            binding.textInputLayoutRePassword.errorIconDrawable = null
-            return false
-        }
-        if (binding.etPassword.text.toString() != binding.etRePassword.text.toString()) {
-            binding.textInputLayoutPassword.error = "Password do not match"
-            return false
-        }
-        return true
+
     }
 
     private fun showLoading(loading: Boolean){
