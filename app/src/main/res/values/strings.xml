@@ -35,6 +35,7 @@
     <string name="speakable_image">Gambar Produk</string>
     <string name="speakable_product">Gambar Produk</string>
     <string name="nama_forum">Nama Forum</string>
+    <string name="degree_value">%s\u00B0</string>
     <string name="ditulis_oleh">Ditulis Oleh</string>
     <string name="detail_permasalahan">Detail Permasalahan</string>
     <string name="your_problems">Your problems...</string>
@@ -91,4 +92,13 @@
     <string name="pencegahan_dan_penyembuhan_penyakit">Pencegahan dan Penyembuhan Penyakit</string>
     <string name="detail_penyakit">detail_penyakit</string>
     <string name="kembali_ke_halaman_utama">Kembali Ke Halaman Utama</string>
+    <string name="cuaca_terkini">Cuaca Terkini</string>
+    <string name="city_name">City Name</string>
+    <string name="date">Tanggal</string>
+    <string name="degree">Suhu</string>
+    <string name="berita_terkini">Berita Terkini</string>
+    <string name="click_to_capture">Klik untuk mengambil gambar</string>
+    <string name="change_camera">Klik untuk mengubah kamera yang digunakan</string>
+    <string name="take_camera">Ambil Melalui Kamera</string>
+    <string name="take_gallery">Ambil melalui Galeri</string>
 </resources>

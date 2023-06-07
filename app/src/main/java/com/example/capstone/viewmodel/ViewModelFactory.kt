@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstone.DI.Injection
 import com.example.capstone.data.Repository
+import com.example.capstone.data.WeatherRepository
 
 class ViewModelFactory(private val repo:Repository): ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
@@ -22,6 +23,26 @@ class ViewModelFactory(private val repo:Repository): ViewModelProvider.NewInstan
             instance ?: synchronized(this){
                 instance ?: synchronized(this){
                     instance ?: ViewModelFactory(Injection.provideRepository(context))
+                }.also{ instance =it}
+            }
+    }
+}
+class WeatherViewModelFactory(private val repo:WeatherRepository):ViewModelProvider.NewInstanceFactory(){
+    @Suppress("UNCHECKED_CAST")
+    override fun<T: ViewModel> create(modelClass:Class<T>):T{
+        if(modelClass.isAssignableFrom(WeatherViewModel::class.java)){
+            return WeatherViewModel(repo) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModelClass :"+modelClass.name)
+    }
+
+    companion object{
+        @Volatile
+        private var instance: WeatherViewModelFactory?=null
+        fun getInstance(context: Context): WeatherViewModelFactory =
+            instance ?: synchronized(this){
+                instance ?: synchronized(this){
+                    instance ?: WeatherViewModelFactory(Injection.provideWeatherRepository(context))
                 }.also{ instance =it}
             }
     }

@@ -1,19 +1,29 @@
 package com.example.capstone.auth
 
+import android.Manifest
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import com.example.capstone.databinding.ActivityWelcomeBinding
+import com.example.capstone.ui.fragment.home.HomeFragment
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 class WelcomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWelcomeBinding
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +33,8 @@ class WelcomeActivity : AppCompatActivity() {
         setupAction()
         setupView()
         playAnimation()
+        fusedLocationClient= LocationServices.getFusedLocationProviderClient(this)
+        getMyLastLocation()
 
     }
 
@@ -59,5 +71,48 @@ class WelcomeActivity : AppCompatActivity() {
         binding.signupButton.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
+    }
+
+    private val requestPermissionLauncher=
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ){
+            when{
+                it[Manifest.permission.ACCESS_FINE_LOCATION]?:false ->{
+                    getMyLastLocation()
+                }
+                it[Manifest.permission.ACCESS_COARSE_LOCATION]?:false ->{
+                    getMyLastLocation()
+                }
+                else ->{
+                    Toast.makeText(this,"No Permssion Granted", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+    private fun checkPermission(permission:String):Boolean{
+        return ContextCompat.checkSelfPermission(
+            this,
+            permission
+        )== PackageManager.PERMISSION_GRANTED
+    }
+    private fun getMyLastLocation(){
+        if(checkPermission(Manifest.permission.ACCESS_FINE_LOCATION)&&
+            checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)){
+            fusedLocationClient.lastLocation.addOnSuccessListener{location: Location ->
+                HomeFragment.LOCATION_DATA="${location.latitude},${location.longitude}"
+
+            }
+
+        }else{
+            requestPermissionLauncher.launch(
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+            )
+        }
+
+
     }
 }
