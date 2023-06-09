@@ -10,7 +10,7 @@ import com.example.capstone.R
 import com.example.capstone.auth.WelcomeActivity
 import com.example.capstone.databinding.ActivityMainBinding
 import com.example.capstone.menu.AboutActivity
-import com.example.capstone.menu.ProfileActivity
+import com.example.capstone.menu.ProfileFragment
 import com.example.capstone.ui.fragment.camera.CameraFragment
 import com.example.capstone.ui.fragment.forums.ForumFragment
 import com.example.capstone.ui.fragment.home.HomeFragment
@@ -84,9 +84,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.profile -> {
-                Intent(this, ProfileActivity::class.java).also {
+                Intent(this, ProfileFragment::class.java).also {
                     startActivity(it)
                     Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()
                 }

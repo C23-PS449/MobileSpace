@@ -91,4 +91,5 @@
     <string name="pencegahan_dan_penyembuhan_penyakit">Pencegahan dan Penyembuhan Penyakit</string>
     <string name="detail_penyakit">detail_penyakit</string>
     <string name="kembali_ke_halaman_utama">Kembali Ke Halaman Utama</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 </resources>
