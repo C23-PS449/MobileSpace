@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstone.data.remote.response.ArticlesItem
 import com.example.capstone.databinding.ItemListNewsBinding
+import com.example.capstone.utils.DateFormatter
 
 class NewsAdapter(private val newslist: List<ArticlesItem>) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -22,7 +23,7 @@ class NewsAdapter(private val newslist: List<ArticlesItem>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val (publishedAt,urlToImage,title,url)=newslist[position]
         viewHolder.title.text=title
-        viewHolder.published.text=publishedAt
+        viewHolder.published.text=DateFormatter.formatDate(publishedAt)
         Glide.with(viewHolder.itemView.context)
             .load(urlToImage)
             .into(viewHolder.image)
