@@ -59,11 +59,13 @@ class HomeFragment : Fragment() {
                         binding.ProgressBarWeather.visibility=View.VISIBLE
                     }
                     is Result.Success->{
-                        binding.ProgressBarWeather.visibility=View.GONE
-                        binding.weatherName.text=result.data.location.name
-                        binding.weatherDate.text=result.data.location.localtime
-                        binding.weatherDegree.text=result.data.current.tempC.toString()
-                        binding.weatherDegree.text=getString(R.string.degree_value,result.data.current.tempC)
+                        binding.apply {
+                            ProgressBarWeather.visibility=View.GONE
+                            weatherName.text=result.data.location.name
+                            weatherDate.text=result.data.location.localtime
+                            weatherDegree.text=result.data.current.tempC.toString()
+                            weatherDegree.text=getString(R.string.degree_value,result.data.current.tempC)
+                        }
                         Log.e("Another",result.data.current.condition.icon)
                         Glide.with(requireContext())
                             .load("https:${result.data.current.condition.icon}")

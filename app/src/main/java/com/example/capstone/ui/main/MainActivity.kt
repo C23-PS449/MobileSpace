@@ -5,8 +5,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -49,16 +52,13 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        // Inisialisasi fragment
         homeFragment = HomeFragment()
         guideFragment = GuideFragment()
         productFragment = ProdukFragment()
         forumsFragment = ForumFragment()
 
-        // Tampilkan fragment Beranda saat pertama kali dibuka
         switchFragment(homeFragment)
 
-        // Aksi klik pada BottomNavigationView
         binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.iBeranda -> switchFragment(homeFragment)
@@ -111,34 +111,56 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.profile -> {
-                Intent(this, ProfileActivity::class.java).also {
-                    startActivity(it)
-                    Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()
-                }
+                showLoading(true)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    Intent(this, ProfileActivity::class.java).also {
+                        startActivity(it)
+                        Toast.makeText(this,"Profil", Toast.LENGTH_SHORT).show()
+                        showLoading(false)
+                    }
+                }, 500)
             }
             R.id.about -> {
-                Intent(this, AboutActivity::class.java).also {
-                    startActivity(it)
-                    Toast.makeText(this,"About", Toast.LENGTH_SHORT).show()
-                }
+                showLoading(true)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    Intent(this, AboutActivity::class.java).also {
+                        startActivity(it)
+                        Toast.makeText(this,"Tentang", Toast.LENGTH_SHORT).show()
+                        showLoading(false)
+                    }
+                }, 500)
             }
             R.id.signOut -> {
-                auth.signOut()
-                Intent(this, WelcomeActivity::class.java).also {
-                    startActivity(it)
-                    Toast.makeText(this,"Log Out Successfully", Toast.LENGTH_SHORT).show()
-                    finish()
-                }
+                showLoading(true)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    auth.signOut()
+                    Intent(this, WelcomeActivity::class.java).also {
+                        startActivity(it)
+                        Toast.makeText(this,"Berhasil Keluar", Toast.LENGTH_SHORT).show()
+                        finish()
+                        showLoading(false)
+                    }
+                }, 500)
             }
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
     companion object{
         private const val REQUEST_CODE_PERMISSION =10
         private val REQUIRED_PERMISSION=arrayOf(
             Manifest.permission.CAMERA,
         )
+    }
+
+    private fun showLoading(loading: Boolean){
+        if(loading) {
+            binding.progressBar.visibility = View.VISIBLE
+        }else{
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
 }

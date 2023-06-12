@@ -37,7 +37,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutUsername"
-        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
@@ -59,10 +58,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
-        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_baseline_email_24"
+        android:layout_marginTop="10dp"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +80,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
-        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
@@ -105,7 +103,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutRePassword"
-        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:passwordToggleEnabled="true"
