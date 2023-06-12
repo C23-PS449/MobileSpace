@@ -15,7 +15,6 @@ import com.example.capstone.auth.WelcomeActivity
 import com.example.capstone.databinding.ActivityMainBinding
 import com.example.capstone.menu.AboutActivity
 import com.example.capstone.menu.ProfileActivity
-import com.example.capstone.ui.fragment.camera.CameraActivity
 import com.example.capstone.ui.fragment.forums.ForumFragment
 import com.example.capstone.ui.fragment.home.HomeFragment
 import com.example.capstone.ui.fragment.guide.GuideFragment

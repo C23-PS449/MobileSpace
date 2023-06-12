@@ -17,24 +17,39 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.example.capstone.databinding.ActivityWelcomeBinding
 import com.example.capstone.ui.fragment.home.HomeFragment
+import com.example.capstone.ui.main.MainActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class WelcomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWelcomeBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = Firebase.auth
+
         supportActionBar?.hide()
         setupAction()
         setupView()
         playAnimation()
         fusedLocationClient= LocationServices.getFusedLocationProviderClient(this)
         getMyLastLocation()
+
+        val user = auth.currentUser
+        if (user != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 

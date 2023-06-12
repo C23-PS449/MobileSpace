@@ -101,4 +101,5 @@
     <string name="change_camera">Klik untuk mengubah kamera yang digunakan</string>
     <string name="take_camera">Ambil Melalui Kamera</string>
     <string name="take_gallery">Ambil melalui Galeri</string>
+    <string name="username">Username</string>
 </resources>

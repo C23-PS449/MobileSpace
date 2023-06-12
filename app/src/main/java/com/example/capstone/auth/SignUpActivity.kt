@@ -9,8 +9,10 @@ import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
+import com.example.capstone.auth.SignInActivity
 import com.example.capstone.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -29,21 +31,33 @@ class SignUpActivity : AppCompatActivity() {
         playAnimation()
 
         binding.btnSignUp.setOnClickListener {
+            val username = binding.etUsername.text.toString()
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
+
             if (checkAllField()) {
                 showLoading(true)
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     showLoading(false)
-                    if (it.isSuccessful) {
-                        auth.signOut()
-                        Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                        val intentLogin = Intent(this, SignInActivity::class.java)
-                        startActivity(intentLogin)
-                        finish()
-                    }
-                    else {
-                        Log.e("Error : ", it.exception.toString())
+                    if (task.isSuccessful) {
+                        val user = auth.currentUser
+                        user?.updateProfile(
+                            UserProfileChangeRequest.Builder()
+                            .setDisplayName(username)
+                            .build())
+                            ?.addOnCompleteListener { updateProfileTask ->
+                                if (updateProfileTask.isSuccessful) {
+                                    Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                                    val intentLogin = Intent(this, SignInActivity::class.java)
+                                    startActivity(intentLogin)
+                                    finish()
+                                } else {
+                                    Toast.makeText(this, "Failed to update profile.", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                    } else {
+                        Log.e("Error: ", task.exception.toString())
+                        Toast.makeText(this, "Failed to create account.", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -54,31 +68,35 @@ class SignUpActivity : AppCompatActivity() {
     private fun checkAllField(): Boolean {
         val email = binding.etEmail.text.toString()
         return when {
-            binding.etEmail.text.toString() == "" -> {
-                binding.textInputLayoutEmail.error = "This is required field"
+            binding.etUsername.text.toString().isEmpty() -> {
+                binding.textInputLayoutUsername.error = "This is a required field"
+                false
+            }
+            binding.etEmail.text.toString().isEmpty() -> {
+                binding.textInputLayoutEmail.error = "This is a required field"
                 false
             }
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
-                binding.textInputLayoutEmail.error = "Check email format"
+                binding.textInputLayoutEmail.error = "Invalid email format"
                 false
             }
-            binding.etPassword.text.toString() == "" -> {
-                binding.textInputLayoutPassword.error = "This is required field"
+            binding.etPassword.text.toString().isEmpty() -> {
+                binding.textInputLayoutPassword.error = "This is a required field"
                 binding.textInputLayoutPassword.errorIconDrawable = null
                 false
             }
-            binding.etPassword.length() <= 6 -> {
+            binding.etPassword.length() < 8 -> {
                 binding.textInputLayoutPassword.error = "Password should be at least 8 characters long"
                 binding.textInputLayoutPassword.errorIconDrawable = null
                 false
             }
-            binding.etRePassword.text.toString() == "" -> {
-                binding.textInputLayoutRePassword.error = "This is required field"
+            binding.etRePassword.text.toString().isEmpty() -> {
+                binding.textInputLayoutRePassword.error = "This is a required field"
                 binding.textInputLayoutRePassword.errorIconDrawable = null
                 false
             }
             binding.etPassword.text.toString() != binding.etRePassword.text.toString() -> {
-                binding.textInputLayoutPassword.error = "Password do not match"
+                binding.textInputLayoutPassword.error = "Passwords do not match"
                 false
             }
             else -> true
@@ -87,22 +105,22 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun playAnimation() {
         val title = ObjectAnimator.ofFloat(binding.title, View.ALPHA, 1f).setDuration(500)
+        val inputUser = ObjectAnimator.ofFloat(binding.textInputLayoutUsername, View.ALPHA, 1f).setDuration(500)
         val inputEmail = ObjectAnimator.ofFloat(binding.textInputLayoutEmail, View.ALPHA, 1f).setDuration(500)
         val inputPassword = ObjectAnimator.ofFloat(binding.textInputLayoutPassword, View.ALPHA, 1f).setDuration(500)
         val rePassword = ObjectAnimator.ofFloat(binding.textInputLayoutRePassword, View.ALPHA, 1f).setDuration(500)
         val buttonSignUp = ObjectAnimator.ofFloat(binding.btnSignUp, View.ALPHA, 1f).setDuration(500)
 
         AnimatorSet().apply {
-            playSequentially(title, inputEmail, inputPassword, rePassword, buttonSignUp)
+            playSequentially(title, inputUser, inputEmail, inputPassword, rePassword, buttonSignUp)
             start()
         }
-
     }
 
-    private fun showLoading(loading: Boolean){
-        if(loading) {
+    private fun showLoading(loading: Boolean) {
+        if (loading) {
             binding.progressBar.visibility = View.VISIBLE
-        }else{
+        } else {
             binding.progressBar.visibility = View.GONE
         }
     }
