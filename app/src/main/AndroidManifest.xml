@@ -20,13 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".menu.EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".menu.ProfileActivity"
-            android:label="Profile Activity">
-        </activity>
-
+            android:label="Profile Activity"></activity>
         <activity
             android:name=".ui.fragment.camera.CameraActivity"
             android:exported="false"
