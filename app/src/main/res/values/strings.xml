@@ -1,0 +1,264 @@
+<resources>
+    <string name="app_name">RiceBuddy</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="sign_up">Daftar Akun</string>
+    <string name="password">Kata Sandi</string>
+    <string name="re_password">Ketik Ulang Kata Sandi</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="text_welcome">Selamat datang di aplikasi RiceBuddy. Pada aplikasi ini, anda dapat mendeteksi penyakit pada tanaman padi, mengecek berita seputar agrikultur, mengecek cuaca, dan mencari lokasi toko obat atau produk tanaman dalam satu genggaman. Untuk memulai silahkan klik register untuk membuat akun dan klik login untuk masuk ke aplikasi.</string>
+    <string name="welcome">Selamat Datang!</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="content_description_profile">Content Description Profile</string>
+    <string name="profile">Profile</string>
+    <string name="about">About</string>
+    <string name="content_description_about">Content Description About</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="content_description_sign_out">Content Description Sign Out</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="title_beranda">Beranda</string>
+    <string name="title_Panduan">Panduan</string>
+    <string name="title_produk">Produk</string>
+    <string name="title_forum">Forum</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_product">Nama Produk</string>
+    <string name="dummy_location">Lokasi Produk</string>
+    <string name="harga_produk">Harga Produk</string>
+    <string name="dummy_stock">Stok Produk</string>
+    <string name="description_tittle">Deskripsi Barang</string>
+    <string name="shop_location">Lokasi Toko</string>
+    <string name="speakable_toko">Lokasi Toko</string>
+    <string name="speakable_image">Gambar Produk</string>
+    <string name="speakable_product">Gambar Produk</string>
+    <string name="nama_forum">Nama Forum</string>
+    <string name="degree_value">%s\u00B0</string>
+    <string name="ditulis_oleh">Ditulis Oleh</string>
+    <string name="detail_permasalahan">Detail Permasalahan</string>
+    <string name="your_problems">Your problems...</string>
+    <string name="komentar">Komentar</string>
+    <string name="tambahkan_komentar">Tambahkan Komentar</string>
+    <string name="enter_comment">Masukkan Komentar Anda Disini</string>
+    <string name="input_komentar">Unggah Komentar</string>
+    <string name="title_activity_camera">Camera_Activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="nama_penyakit">Nama Penyakit</string>
+    <string name="nama_alternatif_penyakit">Nama Alternatif Penyakit</string>
+    <string name="infomrasi_penyakit">Informasi Penyakit</string>
+    <string name="pencegahan_dan_penyembuhan_penyakit">Pencegahan dan Penyembuhan Penyakit</string>
+    <string name="detail_penyakit">detail_penyakit</string>
+    <string name="kembali_ke_halaman_utama">Kembali Ke Halaman Utama</string>
+    <string name="cuaca_terkini">Cuaca Terkini</string>
+    <string name="city_name">City Name</string>
+    <string name="date">Tanggal</string>
+    <string name="degree">Suhu</string>
+    <string name="berita_terkini">Berita Terkini</string>
+    <string name="click_to_capture">Klik untuk mengambil gambar</string>
+    <string name="change_camera">Klik untuk mengubah kamera yang digunakan</string>
+    <string name="take_camera">Ambil Melalui Kamera</string>
+    <string name="take_gallery">Ambil melalui Galeri</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="ketik_pesan_disini">Ketik Pesan Disini....</string>
+    <string name="pesan_berhasil_terkirim">Pesan Berhasil Terkirim</string>
+    <string name="gagal_mengirim_pesan">"Gagal mengirim pesan "</string>
+    <string name="membutuhkan_lokasi">Membutuhkan Lokasi</string>
+    <string name="untuk_menggunakan_aplikasi_silahkan_aktifkan_layanan_lokasi">Untuk menggunakan aplikasi, silahkan aktifkan layanan lokasi</string>
+    <string name="aktifkan_lokasi">Aktifkan Lokasi</string>
+    <string name="upload_failed">Terjadi kesalahan, silahkan pilih foto yang valid dan coba lagi</string>
+    <string name="something_wrong">Terjadi kesalahan, silahkan pilih ulang foto yang valid dan coba kembali</string>
+    <string name="model_loading">Mohon tunggu, model sedang mendeteksi</string>
+    <string name="tips_dan_trik">Cek Toko</string>
+    <string name="need_something">Butuh obat atau produk tanaman lain?, cek toko disekitar anda untuk membeli produk tersebut dengan mengklik tombol cek sekarang!</string>
+    <string name="gambar_penyakit">Gambar Penyakit</string>
+    <string name="check_now">Cek Sekarang</string>
+    <string name="panduan_aplikasi">Panduan Aplikasi</string>
+    <string name="ambil_ngambar">Ambil\nGambar</string>
+    <string name="ambil_gambar_padi">Ambil gambar padi</string>
+    <string name="langkah_selanjutnya">langkah selanjutnya</string>
+    <string name="lihat_ndiagnosa">Lihat\nDiagnosa</string>
+    <string name="lihat_hasil_diagonosa">Lihat Hasil Diagonosa</string>
+    <string name="lihat_cara_pencegahan_dan_penyembuhan">Lihat cara Pencegahan dan Penyembuhan</string>
+    <string name="cek_pencegahan_dan_n_penyembuhan">Cek Pencegahan dan\n Penyembuhan</string>
+    <string name="gambar_yang_dipilih">Gambar yang dipilih</string>
+    <string name="gambar_yang_akan_digunakan">Gambar yang akan digunakan</string>
+    <string name="upload_gambar">Upload Gambar</string>
+    <string name="rice_buddy">Rice Buddy</string>
+    <string name="berhasil_login">Berhasil Login</string>
+    <string name="email_yang_digunakan_tidak_valid">Email yang digunakan tidak valid</string>
+    <string name="password_yang_anda_masukkan_salah">Password yang anda masukkan salah</string>
+    <string name="terdapat_kesalahan_saat_akses_server_mohon_coba_kembali">Terdapat kesalahan saat akses server, periksa kembali koneksi internet anda dan mohon coba kembali</string>
+    <string name="tolong_isi_kolom_ini">Tolong isi kolom ini</string>
+    <string name="format_email_yang_dimasukkan_salah">Format email yang dimasukkan salah</string>
+    <string name="kolom_ini_wajib_diisi">Kolom ini wajib diisi</string>
+    <string name="jumlah_karakter_password_harus_lebih_dari_8_karakter">Jumlah karakter password harus lebih dari 8 karakter</string>
+    <string name="berhasil_membuat_akun_silahkan_login_menggunakan_akun_yang_telah_dibuat">Berhasil membuat akun, silahkan login menggunakan akun yang telah dibuat</string>
+    <string name="kolom_ini_harus_diisi">Kolom ini harus diisi</string>
+    <string name="password_yang_dimasukkan_tidak_sama">Password yang dimasukkan tidak sama</string>
+    <string name="permission_denied">Agar aplikasi dapat berjalan dengan baik, mohon izinkan akses yang dibutuhkan aplikasi</string>
+    <string name="weather_failure">Terjadi kesalahan, Silahkan muat ulang halaman untuk menampilkan data cuaca</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="muat_ulang">Muat Ulang</string>
+    <string name="ricebuddy">RiceBuddy</string>
+    <string name="email_yang_digunakan">Email yang digunakan</string>
+    <string name="enter_name">Masukkan Nama</string>
+    <string name="simpan_profil">Simpan Profil</string>
+    <string name="verifikasi_email">Verifikasi Email</string>
+    <string name="email_tidak_terverifikasi">Email tidak terverifikasi</string>
+    <string name="berhasil_masuk">Berhasil masuk</string>
+    <string name="fail_account">Gagal membuat akun, silahkan cek ulang kolom yang anda isi, periksa email yang digunakan dan coba kembali</string>
+    <string name="failed_shop_list">Terjadi kesalahan, tekan tombol muat ulang untuk memuat daftar toko</string>
+    <string name="failed_to_fetch_detail">Gagal menampilkan data, cek ulang toko yang anda pilih</string>
+    <string name="ke_halaman_deteksi">Ke halaman deteksi</string>
+    <string name="kirim_pesan">Kirim pesan</string>
+    <string name="lupa_password_kata_sandi">Lupa password/kata sandi?</string>
+    <string name="buat_akun">Buat akun</string>
+    <string name="beranda">Beranda</string>
+    <string name="deteksi">Deteksi</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="forum">Forum</string>
+    <string name="success_verification">Email verifikasi telah dikirim, silahkan cek email anda</string>
+    <string name="profil_berhasil_diubah">Profil berhasil diubah</string>
+    <string name="Something_happened">Terjadi kesalahan, silahkan coba kembali</string>
+
+    <string-array name="brown_spot">
+         <item>
+             https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Cochliobolus_miyabeanus.jpg/1280px-Cochliobolus_miyabeanus.jpg
+         </item>
+        <item>Penyakit Bercak Daun</item>
+        <item>Brown Spot Disease</item>
+        <item>
+            Penyakit bercak coklat, juga dikenal sebagai bercak daun Helminthosporium atau bercak daun Drechslera, adalah penyakit jamur umum yang menyerang tanaman padi.
+            Penyakit ini disebabkan oleh jamur Bipolaris oryzae (sebelumnya dikenal sebagai Helminthosporium oryzae).Penyakit bercak coklat dapat secara signifikan mempengaruhi hasil panen padi dan kualitas gabah jika tidak dikelola dengan baik.
+            Penyakit bercak daun coklat tersebar di negara-negara penghasil padi di Asia dan di Afrika. \n\nDi Indonesia, penyakit ini banyak ditemukan pada pertanaman padi terutama di tanah-tanah marginal yang kurang subur, atau kahat unsur hara tertentu. Beberapa daerah padi gogorancah di Nusa Tenggara Barat, Bali, Gunung Kidul, Jawa Barat bagian selatan dan Lampung merupakan daerah endemik penyakit ini.
+            Penyakit ini dapat menyerang pada saat persemaian dan dapat mengakibatkan tanaman mati karena busuk pada koleoptil, batang dan akar. Serangan juga dapat terjadi pada daun dan bulir, apabila bulir padi terserang maka mutunya akan menurun.Hubungan antara terjadinya penyakit dengan ketersediaan unsur hara tanah sangat erat. Tanaman yang kurang sehat sangat mudah terserang penyakit ini.
+            Pada kondisi tanah yang kahat unsur kalium penyakit bercak coklat dapat menimbulkan kerugian hasil 50 sampai 90 persen. Faktor lain yang berpengaruh adalah sistem drainase yang tidak baik, sehingga mengganggu terserapnya unsur-unsur hara.Penyakit bercak daun coklat (brown leaf spot) pada tanaman padi (oryza sativa l) ini disebabkan oleh cendawan Helminthosporium oryzae atau Drechslera oryzae (Cochliobolus miyabeanus). Konidia H. Oryzae berwarna coklat, bersekat 6-17, berbentuk silindris, agak melengkung, dan bagian tengahnya agak melebar.
+            Konidia ini di bentuk pada tangkai sederhana yang tumbuh pada bercak. Konidia ini dapat di sebarkan oleh angin dan dapat terbawa benih.
+        </item>
+        <item>
+            \nPerkembangan penyakit sangat erat hubungannya dengan keadaan hara tanah khususnya nitrogen, kalium, magnesium, dan mangan. Penanaman varietas tahan di Indonesia masih sangat terbatas.
+            Rabcide 50 WP merupakan fungisida yang dianjurkan untuk mengendalikan penyakit bercak daun coklat Helminthosporium oryzae pada tanaman padi. Berdasarkan hasil riset Pusat Penelitian dan Pengembangan Tanaman Pangan &amp; Balai Besar Penelitian Tanaman Padi 2010 ada beberapa cara pengendalian yang lainnya , seperti dibawah ini :
+
+            \n1. Jarak tanam yang tidak terlalu rapat terutama saat musim hujan.
+            \n2. Jika perlu gunakan cara tanam sistem legowo.
+            \n3. Jangan gunakan urea yang berlebih dan imbangi dengan unsur K.
+            \n4. Aplikasi fungisida pada daun tanaman padi, contoh: antracol, dithane, dan fungisida kontak lain sebagai pencegahnya. Jika sudah terserang gunakan fungisida sistemik seperti score, anvil, folicur, Nativo, opus, indar dll.
+            \n5. Penanaman varietas tahan, seperti Ciherang dan Membrano.
+            \n6. Pemupukan berimbang yang lengkap, yaitu 250 kg urea, 100 kg SP36, dan 100 kg KCl per ha.
+            \n7. Penyemprotan fungisida dengan bahan aktif difenoconazol, azoxistrobin, belerang, difenokonazol, tebukonazol, karbendazim, metil tiofanat, atau klorotalonil.
+        </item>
+    </string-array>
+    <string-array name="Leaf_Blast">
+        <item>https://upload.wikimedia.org/wikipedia/commons/c/c1/Rice_blast_Magnaporthe_grisea.jpg</item>
+        <item>Penyakit Blas Daun</item>
+        <item>Leaf Blast Disease</item>
+        <item>
+            Penyakit blas daun, yang disebabkan oleh jamur Pyricularia oryzae, adalah penyakit yang merusak dan tersebar luas yang menyerang tanaman padi.
+            Penyakit blast telah dikenal di semua negara penghasil padi dunia dan dianggap sebagai penyakit terpenting. Di Indonesia penyakit blast pertama kali dilaporkan oleh Rutgers pada tahun 1913 di Jawa Timur. Penyakit ini terdapat terutama pada pertanaman yang subur sehingga usaha intensifikasi padi justru dapat meningkatkan insiden penyakit ini.
+            Gejala penyakit blast dapat muncul pada daun, batang, malai, bulir padi. \n\nBercak pada daun (leaf blas) berbentuk belah ketupat, awalnya hijau keabu-abuan kemudian putih dan akhirnya abu-abu dengan bagian tepi berwarna coklat atau coklat kemerahan. Bentuk dan warna bercak bervariasi tergantung keadaan lingkungan, umur bercak, ketahanan padi.
+            Pada gejala busuk leher (neck blast) tangkai malai busuk dan patah. Pada malai mengalami hampa karena penyakit terjadi sebelum masa pengisian bulir. Busuk juga dapat terjadi pada seludang daun dan bercak-bercak kecil pada bulir padi
+            Kelebihan nitrogen dan/atau kekurangan air (mis: padi gogo) menambah kerentanan tanaman. Kedua faktor ini menyebabkan berkurangnya kandungan silikat jaringan tananaman. Keberhasilan infeksi dipengaruhi oleh lamanya daun basah akibat embun pagi. Padi gogo lebih rentan daripada padi sawah. Suhu 25-30C optimum untuk perkecambahan konidia dan pembentukan apresoriu. Masa terentan tanaman terjadi saat batang padi tumbuh memanjang (+ 55 hari). Terdapat perbedaan respon tanaman padi yaitu jenis indica lebih tahan dari pada japonica sehingga padi ketan sangat rentan. Patogen mudah membentuk ras baru mematahkan ketahanan tanaman
+           
+        </item>
+        <item>
+            \nBerikut adalah beberapa hal yang dapat diterapkan untuk mencegah berkembangnya penyakit blas pada tanaman padi :
+
+            \n1.Gunakan varietas tahan sesuai dengan sebaran ras yang ada di daerah setempat.
+            \n2.Gunakan benih sehat.
+            \n3.Dilakukan seed treatment yaitu benih direndam dahulu oleh fungisida sebelum benih disebar
+            \n4.Hidarkan penggunaan pupuk nitrogen diatas dosis anjuran.
+            \n5.Hindarkan tanam padi dengan varietas yang sama terus menerus sepanjang tahun.
+            \n6.Sanitasi lingkungan harus intensif karena inang alternatif patogen dapat berupa rerumputan.
+            \n7.Hindari tanam padi terlambat dari tanaman petani di sekitarnya.
+            \n8.Pengendalian secara dini dengan perlakuan benih sangat dianjurkan untuk menyelamatkan persemaian sampai umur 30 hari setelah sebar.
+            \n9.Penyemprotan fungisida sistemik sebaiknya 2 kali pada saat stadia tanaman anakan maksimum dan awal berbunga untuk mencegah penyakit blas daun dan blas leher terutama di daerah endemik.
+            \n10.Hindarkan jarak tanam rapat (sebar langsung).
+            \n11.Tanam dengan system tanam jajar legowo (Jarwo) 2:1
+            \n12.Pemakaian kompos sebagai sumber bahan organik.
+        </item>
+    </string-array>
+    <string-array name="Hispa">
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rice_Hispa_%286282950178%29.jpg/800px-Rice_Hispa_%286282950178%29.jpg</item>
+        <item>Penyakit Hispa</item>
+        <item>Hispa/Vermin Disease</item>
+        <item>Kerusakan hispa pada padi terutama disebabkan oleh kumbang hispa padi (Dicladispa armigera). Hispa bukanlah penyakit, melainkan serangan hama yang menyerang tanaman padi.
+        Kumbang hispa padi adalah serangga kecil, berukuran sekitar 5-6 milimeter. Kumbang dewasa berwarna kehijauan atau kecoklatan dengan duri di bagian toraks dan elytra (sayap depan yang mengeras). Larvanya berwarna putih krem, berbentuk silinder, dan memiliki kepala yang kecil.
+        Adapun gejala-gejala yang ditemui pada padi yang terkena hama hispa adalah sebagai berikut :
+            \n\n1.Lesi (Luka) pada daun
+               \nGejala utama penyakit blas daun adalah munculnya lesi berbentuk gelendong atau elips pada daun. Lesi memiliki bagian tengah berwarna putih keabu-abuan yang dikelilingi oleh garis tepi berwarna coklat tua atau keunguan.
+
+            \n\n2. Pembesaran Lesi
+               \nSeiring perkembangan penyakit, lesi akan meluas dan dapat mencapai beberapa sentimeter. Bagian tengah lesi menjadi putih keabu-abuan dengan tampilan berbentuk berlian atau gelendong.
+
+            \n\n3. Busuk pada bagian leher dan kerah / batang padi
+               \nPada stadium lanjut, penyakit ini dapat menyebar ke leher daun dan leher malai, menyebabkan pembusukan dan perubahan warna menjadi gelap.
+
+            \n\n4. Butir/malai padi membusuk
+             \nMalai yang terinfeksi parah dapat menunjukkan gejala hawar atau "leher busuk", di mana leher malai menjadi coklat tua atau hitam, yang menyebabkan kemandulan gabah atau gabah mengerut.
+
+        </item>
+        <item>
+            \nUntuk mencegah terjadinya penyakit hispa, terdapat hal yang dapat diterapkan sebagai berikut :
+
+            \n\n1.Menanam Varietas/Jenis Padi yang Kebal
+              \nMenanam varietas padi yang tahan adalah strategi yang paling efektif untuk mencegah penyakit blas daun. Varietas tahan dapat secara signifikan mengurangi dampak penyakit. Konsultasikan dengan dinas pertanian setempat atau lembaga penelitian untuk mengidentifikasi dan memilih varietas tahan yang sesuai untuk wilayah Anda.
+
+            \n\n2.Rotasi Tanaman
+              \nLakukan rotasi tanaman dengan menghindari penanaman padi secara terus menerus di lahan yang sama. Hal ini membantu memutus siklus penyakit dan mengurangi penumpukan patogen di dalam tanah.
+
+            \n\n3.Sanitasi Lapang Padi
+              \nBuang dan hancurkan sisa-sisa tanaman setelah panen untuk mengurangi sumber inokulum jamur. Hal ini membantu mencegah tempat berkembang biaknya vermin atau hispa padi.
+
+            \n\n4.Perhatikan Waktu Tanam
+              \nOptimalkan waktu tanam untuk menghindari periode puncak serangan hama. Penanaman lebih awal dapat membantu menghindari tekanan hama tertinggi.
+
+            \n\n5.Pemupukan yang Seimbang
+              \nTerapkan praktik pemupukan yang seimbang untuk mendorong pertumbuhan dan kekuatan tanaman yang sehat. Tanaman yang diberi nutrisi yang baik akan lebih tahan terhadap serangan hama.
+
+            \n\n6.Budidaya pencegah hama alami
+              \nMendorong musuh alami kumbang hispa, seperti serangga predator dan laba-laba, dengan melestarikan keanekaragaman hayati dan meminimalkan penggunaan pestisida berspektrum luas yang membahayakan organisme yang menguntungkan. Atau tanam tanaman lain seperti mimba atau tanaman tumpang sari lain untuk mengusir kumbang hispa
+
+            \n\n7.Menggunakan Insektida
+              \nPada serangan yang parah, insektisida mungkin diperlukan untuk mengendalikan populasi hispa. Konsultasikan dengan penyuluh pertanian setempat untuk mengidentifikasi insektisida yang tepat dan waktu aplikasi. Ikuti dosis yang dianjurkan dan tindakan pencegahan keamanan saat menggunakan insektisida.
+            
+        </item>
+    </string-array>
+    <string-array name="Healthy">
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mature_Rice_%28India%29_by_Augustus_Binu.jpg/800px-Mature_Rice_%28India%29_by_Augustus_Binu.jpg</item>
+        <item>Padi Sehat</item>
+        <item>Healthy Paddy</item>
+        <item>Berdasarkan gambar yang anda berikan, aplikasi tidak mendeteksi penyakit apapun pada padi. Jika anda kurang yakin dengan hasil ini, silahkan kirim ulang foto padi anda dengan jarak yang lebih dekat, dan posisi yang benar</item>
+        <item>Tidak ada langkah pencegahan atau penyembuhan yang dapat dilakukan pada padi yang sehat, namun anda dapat mengikuti saran-saran berikut untuk menjaga padi anda tetap sehat
+        1. Mengatur kualitas Air
+            - Pastikan sawah memiliki tingkat yang rata untuk memudahkan distribusi air secara merata.
+            - Pertahankan tingkat air yang konsisten sepanjang musim tanam. Secara umum, kedalaman air sebaiknya sekitar 2-3 inci (5-8 cm) pada tahap awal dan meningkat menjadi 4-6 inci (10-15 cm) pada tahap akhir.
+            - Pantau sawah secara berkala untuk mencegah genangan air atau kekeringan berlebihan. Sesuaikan tingkat air sesuai kebutuhan.
+
+        2. Pengendalian gulma
+            - Kontrol gulma sejak awal musim tanam untuk mencegah persaingan dengan tanaman padi.
+            - Penyiang tangan atau metode mekanis seperti mencabut dengan tangan atau menggunakan alat pemotong gulma dapat digunakan.
+            - Alternatifnya, herbisida yang disetujui untuk penggunaan di sawah padi dapat digunakan sesuai petunjuk yang tertera.
+
+        3. Pemupukan :
+            - Lakukan uji tanah untuk menentukan kebutuhan hara tanaman padi.
+            - Berdasarkan hasil uji tanah, aplikasikan pupuk yang sesuai, seperti nitrogen (N), fosfor (P), dan kalium (K), dengan dosis dan waktu yang direkomendasikan.
+            - Bagi pemberian pupuk menjadi beberapa tahap untuk memberikan nutrisi pada berbagai tahap pertumbuhan.
+
+        4. Pengendalian Hama dan Penyakit :
+            - Pantau sawah secara teratur untuk tanda-tanda serangan hama dan penyakit, seperti serangga padi, tikus, atau infeksi jamur.
+            - Gunakan teknik pengendalian hama terpadu (PHT) yang mencakup praktik budidaya, metode pengendalian hayati, dan penggunaan pestisida secara bijaksana jika diperlukan.
+            - Konsultasikan dengan dinas pertanian setempat atau ahli pertanian untuk panduan khusus tentang pengendalian hama dan penyakit di daerah Anda.
+
+        5. Panen :
+            - Amati tanaman padi untuk tanda-tanda kematangan, seperti kuning dan pengeringan batang, serta keberadaan butir-butir matang yang keras.
+            - Sesuaikan waktu panen, biasanya ketika sebagian besar butir telah mencapai kadar kelembaban yang diinginkan.
+            - Gunakan alat panen yang sesuai, seperti sabit atau mesin panen, untuk memastikan panen yang bersih dan efisien.
+
+        </item>
+
+    </string-array>
+</resources>

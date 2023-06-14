@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/iBeranda"
+        android:title="@string/beranda"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:id="@+id/iPanduan"
+        android:title="@string/deteksi"
+        android:icon="@drawable/ic_books"
+        />
+    <item
+        android:id="@+id/placeholder"
+        android:title=""
+        />
+    <item
+        android:id="@+id/iLocation"
+        android:title="@string/lokasi"
+        android:icon="@drawable/ic_map"
+        />
+    <item
+        android:id="@+id/iForum"
+        android:title="@string/forum"
+        android:icon="@drawable/ic_forum"
+        />
+</menu>
