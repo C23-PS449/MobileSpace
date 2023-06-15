@@ -63,6 +63,7 @@
             app:layout_constraintStart_toEndOf="@id/img_product"
             android:id="@+id/product_price"
             android:textSize="16sp"
+            android:drawableStart="@drawable/baseline_star_24"
             android:ellipsize="end"
             android:gravity="start"
             android:maxLines="3"
